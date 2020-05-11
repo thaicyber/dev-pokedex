@@ -61,9 +61,7 @@ const Footer = () => (
         </address>
       </div>
     </div>
-    <p className='ui center aligned tiny grey header'>
-      2020. Made with by Hubiwan.
-    </p>
+    <p className='ui center aligned tiny grey header'>2020. Made by Hubiwan.</p>
   </footer>
 );
 
