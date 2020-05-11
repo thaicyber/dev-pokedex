@@ -36,7 +36,7 @@ const Footer = () => (
         <h6 className='ui small header'>Follow Me</h6>
         <div className='ui list'>
           <div className='item'>
-            <a href='https://github.com/Hubiwan/dev-pokedex'>
+            <a href='https://github.com/Hubiwan/dev-pokedex' target='_blank'>
               <i className='ui github icon'></i> Github
             </a>
           </div>
