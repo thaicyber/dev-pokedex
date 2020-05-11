@@ -13,7 +13,7 @@ import rootSaga from '@/redux/root.sagas';
 /* ------------------------------------------------------ */
 // middleware helper
 const bindMiddleware = (middlewares) => {
-  if (process.env.ENV_NODE !== 'production') {
+  if (process.env.NODE_ENV !== 'production') {
     const { composeWithDevTools } = require('redux-devtools-extension');
     return composeWithDevTools(applyMiddleware(...middlewares));
   }
