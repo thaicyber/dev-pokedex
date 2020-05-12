@@ -21,7 +21,7 @@ import {
 /*                          Saga                          */
 /* ------------------------------------------------------ */
 /* ----------------------- Worker ----------------------- */
-export function* getPokemons() {
+function* getPokemons() {
   try {
     const req = yield call(
       axios.get,
@@ -34,7 +34,7 @@ export function* getPokemons() {
   }
 }
 
-export function* getPokemon({ payload }) {
+function* getPokemon({ payload }) {
   try {
     const req = yield call(
       axios.get,

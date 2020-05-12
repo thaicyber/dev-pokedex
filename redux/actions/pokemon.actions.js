@@ -5,6 +5,7 @@
 import {
   GET_POKEMONS_REQUESTED,
   GET_POKEMONS_SUCCEEDED,
+  SHOW_MORE_POKEMONS,
   GET_POKEMON_REQUESTED,
   GET_POKEMON_SUCCEEDED,
   SET_FILTER_POKEMONS_INPUT,
@@ -19,12 +20,14 @@ export const getPokemonsRequested = () => ({
   type: GET_POKEMONS_REQUESTED
 });
 
-export const getPokemonsSucceeded = (data) => {
-  return {
-    type: GET_POKEMONS_SUCCEEDED,
-    payload: data
-  };
-};
+export const getPokemonsSucceeded = (data) => ({
+  type: GET_POKEMONS_SUCCEEDED,
+  payload: data
+});
+
+export const showMorePokemons = () => ({
+  type: SHOW_MORE_POKEMONS
+});
 
 export const getPokemonRequested = (data) => ({
   type: GET_POKEMON_REQUESTED,

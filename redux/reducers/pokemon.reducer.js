@@ -4,8 +4,9 @@
 /* ---------------------- internal ---------------------- */
 import {
   GET_POKEMONS_REQUESTED,
-  GET_POKEMON_REQUESTED,
   GET_POKEMONS_SUCCEEDED,
+  SHOW_MORE_POKEMONS,
+  GET_POKEMON_REQUESTED,
   GET_POKEMON_SUCCEEDED,
   SET_FILTER_POKEMONS_INPUT,
   CLEAR_FILTER_POKEMONS_INPUT,
@@ -17,6 +18,8 @@ import {
 /* ------------------------------------------------------ */
 const INITIAL_STATE = {
   pokemons: [],
+  shownPokemons: [],
+  page: 1,
   selectedPokemon: null,
   isLoading: true,
   filterPokemonsInput: '',
@@ -35,7 +38,17 @@ const pokemonReducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         pokemons: payload,
+        shownPokemons: payload.slice(0, 50 * state.page),
         isLoading: false
+      };
+    case SHOW_MORE_POKEMONS:
+      return {
+        ...state,
+        shownPokemons: [
+          ...state.shownPokemons,
+          ...state.pokemons.slice(state.page * 50, (state.page + 1) * 50)
+        ],
+        page: state.page + 1
       };
     case GET_POKEMON_SUCCEEDED:
       return {

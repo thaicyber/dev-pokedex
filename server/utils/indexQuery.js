@@ -52,7 +52,7 @@ class IndexQuery {
   /* ---------------------- Paginate ---------------------- */
   paginate() {
     const page = this.queryOptions.page * 1 || 1;
-    const limit = this.queryOptions.limit * 1 || 750;
+    const limit = this.queryOptions.limit * 1 || 720;
     const skip = (page - 1) * limit;
     this.query = this.query.skip(skip).limit(limit);
     return this;
